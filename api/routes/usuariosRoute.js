@@ -1,8 +1,11 @@
 const { Router } = require('express');
+const UsuarioController = require('../controllers/usuarioController');
 
 const router = Router();
 
-router.post('/usuarios', (req, res) => {});
+router.post('/usuarios', (req, res) => {
+    return UsuarioController.cadastrarUsuario(req, res);
+});
 
 router.get('/usuarios', (req, res) => {});
 
