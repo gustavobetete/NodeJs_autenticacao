@@ -10,12 +10,20 @@ router.post('/usuarios', (req, res) => {
     return UsuarioController.cadastrarUsuario(req, res);
 });
 
-router.get('/usuarios', (req, res) => {});
+router.get('/usuarios', (req, res) => {
+    return UsuarioController.listarUsuarios(req, res);
+});
 
-router.get('/usuarios/:id', (req, res) => {});
+router.get('/usuarios/:id', (req, res) => {
+    return UsuarioController.listarUsuarioPorId(req, res);
+});
 
-router.put('/usuarios/:id', (req, res) => {});
+router.put('/usuarios/:id', (req, res) => {
+    return UsuarioController.atualizarUsuario(req, res);
+});
 
-router.delete('/usuarios/:id', (req, res) => {});
+router.delete('/usuarios/:id', (req, res) => {
+    return UsuarioController.deletarUsuario(req, res);
+});
 
 module.exports = router;
