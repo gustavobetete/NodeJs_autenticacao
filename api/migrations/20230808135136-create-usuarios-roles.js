@@ -16,9 +16,16 @@ module.exports = {
           key: 'id'
         },
         onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       role_id: {
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        references: {
+          model: 'roles',
+          key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
