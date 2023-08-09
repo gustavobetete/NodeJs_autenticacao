@@ -25,6 +25,12 @@ class RoleService {
             throw new Error("Erro ao cadastrar role");
         }
     }
+
+    async listarRoles() {
+        const roles = await database.roles.findAll();
+
+        return roles;
+    }
 }
 
 module.exports = RoleService;

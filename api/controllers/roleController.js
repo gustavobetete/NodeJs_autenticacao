@@ -15,6 +15,18 @@ class RoleController {
             res.status(400).send({ message: error.message });
         }
     }
+
+    static async listarRoles(req, res) {
+        try {
+            const roles = await roleService.listarRoles();
+
+            res.status(200).json(roles);
+
+        } catch (error) {
+            console.log('Message error: ', error.message);
+            res.status(400).send({ message: error.message });
+        }
+    }
 }
 
 module.exports = RoleController;

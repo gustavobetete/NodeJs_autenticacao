@@ -5,7 +5,7 @@ const router = Router();
 
 router
     .post('/roles', RoleController.cadastrarRole)
-    .get('/roles')
+    .get('/roles', RoleController.listarRoles)
     .get('/roles/:id')
     .put('/roles/:id')
     .delete('/roles/:id')
