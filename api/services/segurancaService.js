@@ -115,5 +115,10 @@ class SegurancaService {
         })
         return novaRole
     }
+
+    async cadastrarPermissoes(dto) {
+        const permissoesCadastradas = await database.permissoes.bulkCreate(dto)
+        return permissoesCadastradas
+    }
 }
 module.exports = SegurancaService
