@@ -21,5 +21,15 @@ class SegurancaController {
             res.status(400).send({ message: error.message})
         }
     }
+
+    static async cadastrarRoles(req, res) {
+        const { nome, descricao } = req.body
+        try {
+            const role = await segurancaService.cadastrarRoles({ nome, descricao})
+            res.status(201).send(role)
+        } catch (error) {
+            res.status(400).send({ message: error.message})
+        }
+    }
 }
 module.exports = SegurancaController
